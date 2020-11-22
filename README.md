@@ -1,2 +1,2 @@
-# php_calculators
- Aplikacje internetowe
+# Kalkulator kredytowy aplikacje internetowe
+ kalkulator
