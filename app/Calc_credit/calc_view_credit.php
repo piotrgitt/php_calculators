@@ -36,13 +36,13 @@ if (isset($messages)) {
 
 <?php if (isset($result)){ ?>
 <div style="margin: 20px; padding: 10px; border-radius: 5px; background-color: #5199FF; width:300px;">
-<?php print 'Miesięczna rata kredytu: '. round($result,2)." PLN";?>
+<?php print 'Miesięczna rata kredytu:  '. round($result,2)." PLN";?>
 </div>
 <?php } ?>
 
 <?php if (isset($total_cost)){ ?>
 <div style="margin: 20px; padding: 10px; border-radius: 5px; background-color: #5199FF; width:300px;">
-<?php print 'Całkowity koszt kredytu: '. round($total_cost,2)." PLN";?>
+<?php print 'Całkowity koszt kredytu: '. round($total_cost,2)." PLN";  print 'Całkowity koszt kredytu: '. round($total_cost,2)." PLN";?>
 </div>
 <?php } ?>
 
