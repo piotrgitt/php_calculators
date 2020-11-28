@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <title>Kalkulator kredytowy</title>
+ <link rel="stylesheet" href="<?php print _APP_URL?>/styles.css">
 </head>
 <body>
 

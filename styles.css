@@ -1,0 +1,28 @@
+body {
+  background-color: powderblue;
+}
+h1 {
+  color: #55f;
+}
+p {
+  color: red;
+}
+label{
+    color: #030303;
+    font: bold;
+    font-family: verdana;
+    font-size: 14p;
+    margin: 2px;
+    
+}
+
+input{
+    border-style: none;
+    border-width: 10;
+    margin: 2px;
+}
+
+select{
+    border-style: none;
+    margin: 2px;
+}

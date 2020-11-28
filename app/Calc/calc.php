@@ -1,3 +1,4 @@
+
 <?php
 // KONTROLER strony kalkulatora
 require_once dirname(__FILE__).'/../../config.php';
@@ -70,4 +71,6 @@ if (empty ( $messages )) { // gdy brak błędów
 // 4. Wywołanie widoku z przekazaniem zmiennych
 // - zainicjowane zmienne ($messages,$x,$y,$operation,$result)
 //   będą dostępne w dołączonym skrypcie
+
+
 include 'calc_view.php';
