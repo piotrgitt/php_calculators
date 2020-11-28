@@ -3,27 +3,33 @@
 <head>
 <meta charset="utf-8" />
 <title>Kalkulator kredytowy</title>
- <link rel="stylesheet" href="<?php print _APP_URL?>/styles.css">
+ <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"  crossorigin="anonymous">
+     
 </head>
 <body>
 
-<form action="<?php print(_APP_URL);?>/app/Calc_credit/calc_credit.php" method="get">
-	<label for="id_x">Kwota: </label>
-	<input id="id_x" type="text" name="kwota" value="<?php if(isset($kwota)){print($kwota);}?>" />
-	<br />
-	
-	<label for="id_y">Na ile lat: </label>
-	<input id="id_y" type="text" name="lata" value="<?php if(isset($lata)){print($lata);}?>" />
-	<br />
-	
-	<label for="id_z">Oprocentowanie: </label>
-	<input id="id_z" type="text" name="oprocentowanie" value="<?php if(isset($oprocentowanie)){print($oprocentowanie);}?>" /><br />
-	
-	
-	
-	<input type="submit" value="Oblicz ratę kredytu" />
-</form>	
+<form class="pure-form pure-form-aligned" action="<?php print(_APP_URL);?>/app/Calc_credit/calc_credit.php" method="get">
 
+        <fieldset>
+        <div class="pure-control-group">
+            <label for="aligned-name">Kwota:</label>
+            <input type="text" id="id_x" name="kwota" value="<?php if(isset($kwota)){print($kwota);}?>" placeholder="Wpisz kwotę" />
+        </div>
+        <div class="pure-control-group">
+            <label for="aligned-password">Na ile lat:</label>
+            <input type="text" id="id_y" name="lata" value="<?php if(isset($lata)){print($lata);}?>" placeholder="Wpisz lata" />
+        </div>
+        <div class="pure-control-group">
+            <label for="aligned-email">Oprocentowanie:</label>
+            <input type="text" id="id_z" name="oprocentowanie" value="<?php if(isset($oprocentowanie)){print($oprocentowanie);}?>" placeholder="%" />
+        </div>
+
+        <div class="pure-controls">
+            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        </div>
+    </fieldset>
+</form>	
+ 
 <?php
 //wyświeltenie listy błędów, jeśli istnieją
 if (isset($messages)) {
