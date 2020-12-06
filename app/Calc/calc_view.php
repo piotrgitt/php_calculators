@@ -9,12 +9,14 @@
 </head>
 <body>
 
+<div style="width: 90%; margin: 1em auto;">
 <form class="pure-form pure-form-aligned"  action="<?php print(_APP_URL);?>/app/Calc/calc.php" method="get" style="margin-bottom: 50px">
         
+    <legend> Kalkulator </legend>
         <fieldset>
         <div class="pure-control-group">
             <label for="aligned-name">Liczba 1:</label>
-            <input id="id_x" type="text" name="x" value="<?php if(isset($x)){print($x);}?>" placeholder="Wpisz liczbę" />
+            <input id="id_x" type="text" name="x" value="<?php out($x);?>" placeholder="Wpisz liczbę" />
         </div>
             
             
@@ -28,12 +30,9 @@
             </select>
         </div>
             
-            
-            
-            
         <div class="pure-control-group">
             <label for="aligned-name">Liczba 2:</label>
-            <input id="id_y" type="text" name="y" value="<?php if(isset($y)){print($y);}?>" placeholder="Wpisz liczbę" /> <br />
+            <input id="id_y" type="text" name="y" value="<?php out($y);?>" placeholder="Wpisz liczbę" /> <br />
         </div>
             
         <div class="pure-controls">
@@ -41,25 +40,32 @@
         </div>
     </fieldset>
 </form>	
-
+</div>
+<div style="width: 90%; margin: 1em auto;">    
 <?php
+
 //wyświeltenie listy błędów, jeśli istnieją
 if (isset($messages)) {
+    if(count($messages)>0){
 	echo '<ol style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #f88; width:300px;">';
 	foreach ( $messages as $msg ) {
 		echo '<li>'.$msg.'</li>';
 	}
+        
+       
 	echo '</ol>';
+    }
 }
+
 ?>
 
-<?php if (isset($result)){ ?>
-
     
+<?php if (isset($result)){ ?> 
 <div style="margin: 20px; padding: 10px; border-radius: 5px; background-color: #5199FF; width:300px;">
 <?php echo 'Wynik: '.$result; ?>
 </div>
 <?php } ?>
+    </div>
 <br><br>
 </body>
 </html>

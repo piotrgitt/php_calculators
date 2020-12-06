@@ -4,4 +4,13 @@ define('_SERVER_URL', 'http://'._SERVER_NAME);
 define('_APP_ROOT', '/php_calculators');
 define('_APP_URL', _SERVER_URL._APP_ROOT);
 define("_ROOT_PATH", dirname(__FILE__));
+
+
+function out(&$parametr){
+    if(isset($parametr)){
+        return $parametr;
+    }
+}
+
+
 ?>
