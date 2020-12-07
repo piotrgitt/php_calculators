@@ -8,6 +8,16 @@
 
 </head>
 <body>
+    
+<div style="width: 90%; margin: 1em auto;">  
+<div class="pure-controls" style: 2em auto>
+    <a href ="<?php echo _APP_ROOT;?>/app/Calc_credit/calc_credit.php" class="pure-button" >Kalkulator kredytowy</a>
+    
+    <a href ="<?php echo _APP_ROOT;?>/app/Security/logout.php" class="pure-button" >Wyloguj</a>
+</div>    
+    <br><br>    
+    
+    
 
 <div style="width: 90%; margin: 1em auto;">
 <form class="pure-form pure-form-aligned"  action="<?php print(_APP_URL);?>/app/Calc/calc.php" method="get" style="margin-bottom: 50px">
