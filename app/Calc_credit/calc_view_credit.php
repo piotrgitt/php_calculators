@@ -43,6 +43,7 @@
 
  
 <?php
+
 //wyświeltenie listy błędów, jeśli istnieją
 if (isset($messages) && (count($messages) > 0)) {
 	echo '<ol style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #f88; width:300px;">';
@@ -53,7 +54,9 @@ if (isset($messages) && (count($messages) > 0)) {
 }
 ?>
 
-<?php if (isset($result)){ ?>
+<?php 
+
+if (isset($result)){ ?>
 <div style="margin: 20px; padding: 10px; border-radius: 5px; background-color: #5199FF; width:300px;">
 <?php print 'Miesięczna rata kredytu:  '. round($result,2)." PLN";?>
 </div>

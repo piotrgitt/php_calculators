@@ -12,7 +12,9 @@ $total_cost = null;
 $messages = array();
 
 getParams($kwota, $lata, $oprocentowanie);
+
 if(validateCredit($kwota, $lata, $oprocentowanie)){
+
     process($kwota, $lata, $oprocentowanie, $result, $total_cost);
 }
 
@@ -21,6 +23,8 @@ function getParams(&$kwota, &$lata, &$oprocentowanie){
     $kwota = isset($_REQUEST ['kwota']) ? $_REQUEST ['kwota'] : null;
     $lata = isset($_REQUEST ['lata']) ? $_REQUEST ['lata'] : null;
     $oprocentowanie = isset($_REQUEST ['oprocentowanie']) ? $_REQUEST ['oprocentowanie'] : null;
+    
+    
 }
 
 
@@ -36,13 +40,14 @@ function process(&$kwota,&$lata,&$oprocentowanie,&$result,$total_cost ){
 
 
 function validateCredit(&$kwota, &$lata, &$oprocentowanie){
+   
     
-    if ( ! (isset($kwota) && isset($lata) && isset($oprocentowanie))) {
-            $messages [] = 'Błędne wywołanie aplikacji. Brak jednego z parametrów.';
-    } return false;
-
+    if ( ! (isset($kwota) && isset($lata) && isset($oprocentowanie)) ) return false;
+    
+    
     if ( $kwota == "") {
             $messages [] = 'Nie podano Kwoty';
+            
     }
     if ( $lata == "") {
             $messages [] = 'Nie podano Lat';
@@ -51,7 +56,7 @@ function validateCredit(&$kwota, &$lata, &$oprocentowanie){
             $messages [] = 'Nie podano Oprocentowania';
     } 
 
-
+    
 
     if (empty( $messages )) {
 
