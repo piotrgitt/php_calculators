@@ -1,7 +1,9 @@
 <?php
 require_once dirname(__FILE__).'/../../config.php';
 
-include _ROOT_PATH.'\app\Security\check.php';
+//-----Bramkarz
+//include _ROOT_PATH.'\app\Security\check.php';
+
 
 $kwota = null;
 $lata = null;
@@ -11,18 +13,24 @@ $result = null;
 $total_cost = null;
 $messages = array();
 
+
+
+
+
 getParams($kwota, $lata, $oprocentowanie);
 
-if(validateCredit($kwota, $lata, $oprocentowanie)){
 
-    process($kwota, $lata, $oprocentowanie, $result, $total_cost);
+if(validateCredit($kwota, $lata, $oprocentowanie, $messages)){
+    process($kwota, $lata, $oprocentowanie, $result, $total_cost, $messages);
+  
 }
 
 
 function getParams(&$kwota, &$lata, &$oprocentowanie){
-    $kwota = isset($_REQUEST ['kwota']) ? $_REQUEST ['kwota'] : null;
-    $lata = isset($_REQUEST ['lata']) ? $_REQUEST ['lata'] : null;
-    $oprocentowanie = isset($_REQUEST ['oprocentowanie']) ? $_REQUEST ['oprocentowanie'] : null;
+
+    $kwota = (isset($_REQUEST ['kwota'])) ? $_REQUEST ['kwota'] : null;
+    $lata = (isset($_REQUEST ['lata'])) ? $_REQUEST ['lata'] : null;
+    $oprocentowanie = (isset($_REQUEST ['oprocentowanie'])) ? $_REQUEST ['oprocentowanie'] : null;
     
     
 }
@@ -39,9 +47,8 @@ function process(&$kwota,&$lata,&$oprocentowanie,&$result,$total_cost ){
 
 
 
-function validateCredit(&$kwota, &$lata, &$oprocentowanie){
-   
-    
+function validateCredit(&$kwota, &$lata, &$oprocentowanie, &$messages){
+
     if ( ! (isset($kwota) && isset($lata) && isset($oprocentowanie)) ) return false;
     
     
@@ -51,6 +58,9 @@ function validateCredit(&$kwota, &$lata, &$oprocentowanie){
     }
     if ( $lata == "") {
             $messages [] = 'Nie podano Lat';
+    }
+    if ( $lata == "0") {
+            $messages [] = 'Lata nie mogą być równe 0';
     }
     if ( $oprocentowanie == "") {
             $messages [] = 'Nie podano Oprocentowania';
@@ -72,11 +82,10 @@ function validateCredit(&$kwota, &$lata, &$oprocentowanie){
                     $messages [] = 'Druga wartość nie jest liczbą całkowitą';
             }
     }
+    
 
-    if (empty ( $messages )) { 
-        return true;
-
-    }
+    if (count($messages)>0) return false;
+    
     return true;
 }
 

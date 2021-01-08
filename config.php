@@ -7,7 +7,9 @@ define("_ROOT_PATH", dirname(__FILE__));
 
 
 function out(&$parametr){
-    if(isset($parametr)){
+    
+    
+    if(isSet($parametr)){
         return $parametr;
     }
 }
