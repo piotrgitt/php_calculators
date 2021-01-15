@@ -6,7 +6,7 @@
 <!-- Form -->
 <section>
     <h3>Kalkulator kredytowy</h3>
-    <form action="{$approot}/app/Calc_credit/calc_credit.php" method="GET" >
+    <form action="{$config->action_url}calcCredit" method="POST" >
             <div class="row gtr-uniform gtr-50">
                     <div class="col-6 col-12-xsmall">
 
@@ -30,6 +30,21 @@
 </section>
                     
 
+
+
+
+<!-- Results -->    
+{if isset($result)}
+<div style="margin: 20px; padding: 10px; border-radius: 5px; background-color: #5199FF;">
+    Miesięczna rata kredytu: {$result|string_format:"%.2f"} PLN </br>
+    Całkowity koszt kredytu: {$total_cost|string_format:"%.2f"} PLN
+</div>
+{/if}   
+
+</br></br>
+
+
+
 <!-- Messages -->       
 {if $messages->isError()} 
     <div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #f55; width:300px; color:black;font-weight: bold; ">
@@ -45,7 +60,7 @@
 {/if}
 
 {if $messages->isInfo()} 
-    <div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #45f; width:300px; color:black;font-weight: bold; ">
+    <div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #7bf; width:300px; color:black;font-weight: bold; ">
     <h4 style="color:black; font-weight: bold;">INFO: </h4>
     <ol class="err">
             {foreach  $messages->getInfos() as $msg }
@@ -56,15 +71,5 @@
             </ol>
     </div> 
 {/if}
-
-
-<!-- Results -->    
-{if isset($result)}
-<div style="margin: 20px; padding: 10px; border-radius: 5px; background-color: #5199FF;">
-    Miesięczna rata kredytu: {$result|string_format:"%.2f"} PLN </br>
-    Całkowity koszt kredytu: {$total_cost|string_format:"%.2f"} PLN
-</div>
-{/if}                   
-
 
 {/block}    

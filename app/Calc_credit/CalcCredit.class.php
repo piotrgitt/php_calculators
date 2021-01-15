@@ -97,6 +97,8 @@ class CalcCredit {
 
         $smarty->assign('config', $config);
         
+        $smarty->assign('action_root', $config->action_root);
+        $smarty->assign('action_url', $config->action_url);
         $smarty->assign('app_url',$config->app_url);
         $smarty->assign('root_path',$config->root_path);
         $smarty->assign('approot',$config->app_root);
