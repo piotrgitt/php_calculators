@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-01-08 19:05:34
+/* Smarty version 3.1.36, created on 2021-01-12 20:12:50
   from 'C:\xampp\htdocs\php_calculators\app\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5ff89eee9ecdd0_00907925',
+  'unifunc' => 'content_5ffdf4b2e0e557_23087252',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '661d31a19be7b5470fbc1d776e29125ca69f49a9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\php_calculators\\app\\templates\\main.tpl',
-      1 => 1610127629,
+      1 => 1610146904,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ff89eee9ecdd0_00907925 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ffdf4b2e0e557_23087252 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -38,8 +38,8 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 </head>
 <body class="is-preload">
     
+    <!-- Header -->
     <div id="page-wrapper"> 
-        <!-- Header -->
         <header id="header">
                 <h1 id="logo"><a href="<?php echo $_smarty_tpl->tpl_vars['approot']->value;?>
 /index.php">Kalkulator kredytowy</a></h1>
@@ -53,46 +53,37 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
         <!-- Header2 -->
         <div id="main" class="wrapper style1">
-                <div class="container">
-                        <header class="major">
-                                <h2>Kalkulator kredytowy</h2>
-                                <p>Oprocentowanie</p>
-                        </header>
+            <div class="container">
+                <header class="major">
+                    <h2>Kalkulator kredytowy</h2>
+                    <p>Oprocentowanie</p>
+                </header>
 
-                    
-                    
-                    
-                    
-                    
-<!-- content -->    
-<div class="content">
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15416040905ff89eee9ec150_34702871', 'content');
+
+                <!-- content -->    
+                <div class="content">
+                <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4609429695ffdf4b2e0d1a8_16979784', 'content');
 ?>
 
-</div>
-
-
-
-
-
-<!-- Footer-->
-    <footer id="footer">
-	<ul class="icons">
-            <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-            <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-            <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-	</ul>
-	<ul class="copyright">
-            <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-	</ul>
-    </footer>
+                </div>
+            </div> 
+        </div>
+        <!-- Footer-->
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </footer>
     </div>
-    
-    
 
     
     <!-- Scripts -->
@@ -123,12 +114,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15416040905ff89eee
 </body>
 </html><?php }
 /* {block 'content'} */
-class Block_15416040905ff89eee9ec150_34702871 extends Smarty_Internal_Block
+class Block_4609429695ffdf4b2e0d1a8_16979784 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_15416040905ff89eee9ec150_34702871',
+    0 => 'Block_4609429695ffdf4b2e0d1a8_16979784',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

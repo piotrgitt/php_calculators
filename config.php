@@ -1,12 +1,12 @@
 <?php
-define('_SERVER_NAME', 'localhost');
-define('_SERVER_URL', 'http://'._SERVER_NAME);
-define('_APP_ROOT', '/php_calculators');
-define('_APP_URL', _SERVER_URL._APP_ROOT);
-define("_ROOT_PATH", dirname(__FILE__));
+require_once 'Config.class.php';
 
+$config = new Config();
 
-
-
+$config->server_name = 'localhost';
+$config->server_url = 'http://'.$config->server_name;
+$config->app_root = '/php_calculators';
+$config->app_url = $config->server_url.$config->app_root;
+$config->root_path = dirname(__FILE__);
 
 ?>
