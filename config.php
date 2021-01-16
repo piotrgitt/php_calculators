@@ -1,5 +1,5 @@
 <?php
-require_once 'Config.class.php';
+require_once 'Core/Config.class.php';
 
 $config = new Config();
 
@@ -10,7 +10,7 @@ $config->app_url = $config->server_url.$config->app_root;
 $config->root_path = dirname(__FILE__);
 
 
-$config->action_root = $config->app_root.'/app/ctrl.php?action=';
-$config->action_url = $config->app_url.'/app/ctrl.php?action=';
+$config->action_root = $config->app_root.'/ctrl.php?action=';
+$config->action_url = $config->app_url.'/ctrl.php?action=';
 
 ?>

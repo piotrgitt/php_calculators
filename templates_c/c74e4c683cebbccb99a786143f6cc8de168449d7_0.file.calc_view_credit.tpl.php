@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-01-15 21:36:16
-  from 'C:\xampp\htdocs\php_calculators\app\Calc_credit\calc_view_credit.tpl' */
+/* Smarty version 3.1.36, created on 2021-01-17 00:21:02
+  from 'C:\xampp\htdocs\php_calculators\app\views\calc_view_credit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_6001fcc0bfa512_82763243',
+  'unifunc' => 'content_600374de28eca3_25912960',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '516d7a43ece3285e083ce4d2033c1744e10087c1' => 
+    'c74e4c683cebbccb99a786143f6cc8de168449d7' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\php_calculators\\app\\Calc_credit\\calc_view_credit.tpl',
-      1 => 1610742973,
+      0 => 'C:\\xampp\\htdocs\\php_calculators\\app\\views\\calc_view_credit.tpl',
+      1 => 1610838249,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6001fcc0bfa512_82763243 (Smarty_Internal_Template $_smarty_tpl) {
+function content_600374de28eca3_25912960 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_682369016001fcc0be1379_09834887', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_175530273600374de21c338_14150028', 'content');
 ?>
     
-<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/main.tpl");
+<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_682369016001fcc0be1379_09834887 extends Smarty_Internal_Block
+class Block_175530273600374de21c338_14150028 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_682369016001fcc0be1379_09834887',
+    0 => 'Block_175530273600374de21c338_14150028',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
