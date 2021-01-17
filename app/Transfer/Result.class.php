@@ -1,5 +1,5 @@
 <?php
-
+namespace app\Transfer;
 
 class Result {
     public $result;

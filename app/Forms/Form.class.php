@@ -1,5 +1,5 @@
 <?php
-
+namespace app\Forms;
 
 class Form {
     public $kwota;

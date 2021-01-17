@@ -1,9 +1,10 @@
 <?php
+namespace app\controllers;
 
 
-require_once $config->root_path.'/app/controllers/Result.class.php';
-require_once $config->root_path.'/app/controllers/Form.class.php';
-
+//odpowiednik importu w javie - pokazuje systemowi, gdzie znajduje się klasa
+use app\Forms\Form;
+use app\Transfer\Result;
 
 
 
@@ -21,9 +22,9 @@ class CalcCredit {
     
     
     public function getParams(){
-        $this->form->kwota = getFromRequest('kwota');
-        $this->form->lata = getFromRequest('lata');
-        $this->form->oprocentowanie = getFromRequest('oprocentowanie');
+        $this->form->kwota = \Core\getFromRequest('kwota');
+        $this->form->lata = \Core\getFromRequest('lata');
+        $this->form->oprocentowanie = \Core\getFromRequest('oprocentowanie');
 
     }
     

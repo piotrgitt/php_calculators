@@ -2,7 +2,7 @@
 
 // USTAWIENIE KONFIGURACJI
 require_once dirname(__FILE__).'/Core/Config.class.php';
-$config = new Config();
+$config = new Core\Config();
 include dirname(__FILE__).'/config.php'; 
 
 //ZWRACANIE GLOBALNEGO PLIKU KONFIGURACJI
@@ -12,7 +12,7 @@ function &getConfig(){
 }
 
 require_once getConfig()->root_path.'/Core/Messages.class.php';
-$messages = new Messages(); 
+$messages = new Core\Messages(); 
 
 function &getMessages(){
     global $messages;
@@ -46,4 +46,12 @@ function &getSmarty(){
 
 
 require_once getConfig()->root_path.'/Core/functions.php';
-$action = getFromRequest('action');
+$action = Core\getFromRequest('action');
+
+require_once 'Core/ClassLoader.class.php';
+$cloader = new Core\classLoader();
+function &getLoader(){
+    global $cloader;
+    return $cloader;
+    
+}

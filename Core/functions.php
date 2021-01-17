@@ -1,4 +1,6 @@
 <?php
+namespace Core;
+
 
 function getFromRequest($param){
     $request = (isset($_REQUEST [$param])) ? $_REQUEST [$param] : null;

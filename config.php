@@ -1,8 +1,4 @@
 <?php
-require_once 'Core/Config.class.php';
-
-$config = new Config();
-
 $config->server_name = 'localhost';
 $config->server_url = 'http://'.$config->server_name;
 $config->app_root = '/php_calculators';
