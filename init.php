@@ -45,8 +45,10 @@ function &getSmarty(){
 }
 
 
-require_once getConfig()->root_path.'/Core/functions.php';
-$action = Core\getFromRequest('action');
+
+
+session_start(); //uruchom lub kontynuuj sesję
+$config->roles = isset($_SESSION['_roles']) ? unserialize($_SESSION['_roles']) : array(); //wczytaj role
 
 require_once 'Core/ClassLoader.class.php';
 $cloader = new Core\classLoader();
@@ -55,3 +57,6 @@ function &getLoader(){
     return $cloader;
     
 }
+
+require_once 'Core/functions.php';
+$action = getFromRequest('action');

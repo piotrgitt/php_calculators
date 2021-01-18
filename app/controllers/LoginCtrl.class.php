@@ -15,8 +15,8 @@ class LoginCtrl {
     }
     
     public function getParams(){
-        $this->form->login = \Core\getFromRequest('login');
-        $this->form->pass = \Core\getFromRequest('pass');
+        $this->form->login = getFromRequest('login');
+        $this->form->pass = getFromRequest('pass');
     }
     
     public function validate(){
@@ -24,7 +24,8 @@ class LoginCtrl {
         //IS FORM EMPTY
         if(!( isset($this->form->login) && isset($this->form->pass))){
             
-            getMessages()->addError('Błędne wywołanie aplikacji');
+   
+            return false;
         }
         
         //IS FORM "EMPTY" -> "" "" 
@@ -42,9 +43,9 @@ class LoginCtrl {
         //VALITADE GIVEN LOGIN AND PASSWORD
         if(!getMessages()->isError()){
             if($this->form->login == 'admin' && $this->form->pass = 'admin'){
-                if(session_status() == PHP_SESSION_NONE){
-                    session_start();
-                }
+                
+              
+                
                 //stworzenie użytkownika w aplikacji -> przekazujemy admin jako login, oraz 'admin' jako rolę 
                 $user = new User($this->form->login, 'admin');
                 // zapis wartości do sesji
@@ -52,14 +53,15 @@ class LoginCtrl {
                 //$_SESSION['user_role'] = $user->role;
                 // LUB można zapisać or razu cały obiekt, ale trzeba go zserializować
                 $_SESSION['user'] = serialize($user);	
-                
+                addRole($user->role);
+ 
             } else if($this->form->login == 'user' && $this->form->pass = 'user'){
                 if(session_status() == PHP_SESSION_NONE){
                     session_start();
                 }
-                $user = new app\Transfer\User($this->form->login, 'user');
+                $user = new User($this->form->login, 'user');
                 $_SESSION['user'] = serialize($user);	
-                
+                addRole($user->role);
             }else {
                 getMessages()->addError("Nazwa użytkownika bądź hasło niepoprawne");
             }
@@ -83,9 +85,7 @@ class LoginCtrl {
     }
     
     public function doLogout(){
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
+ 
         session_destroy();
 
         getMessages()->addInfo("Poprawnie wylogowano");
