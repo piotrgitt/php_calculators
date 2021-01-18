@@ -6,7 +6,7 @@
 <!-- Form -->
 <section>
     <h3>Kalkulator kredytowy</h3>
-    <form action="{$action_url}calcCredit" method="POST" >
+    <form action="{$action_url}process" method="POST" >
             <div class="row gtr-uniform gtr-50">
                     <div class="col-6 col-12-xsmall">
 

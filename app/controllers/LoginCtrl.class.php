@@ -72,19 +72,20 @@ class LoginCtrl {
     }
     
     
-    public function doLogin(){
+    public function action_login(){
         $this->getParams();
         if($this->validate()){
             //ZALOGOWANY -> przekieruj na stronę główną
-            header("Location: ". getConfig()->app_url.'/');
             getMessages()->addInfo("Poprawnie zalogowano");
+            header("Location: ". getConfig()->app_url.'/');
+            
         } else {
             //NIE ZALOGOWANY -> wyświetl ponownie widok logowania
             $this->generateView();
         }
     }
     
-    public function doLogout(){
+    public function action_logout(){
  
         session_destroy();
 

@@ -22,14 +22,21 @@ class CalcCredit {
     
     
     public function getParams(){
-        $this->form->kwota = \Core\getFromRequest('kwota');
-        $this->form->lata = \Core\getFromRequest('lata');
-        $this->form->oprocentowanie = \Core\getFromRequest('oprocentowanie');
+        $this->form->kwota = getFromRequest('kwota');
+        $this->form->lata = getFromRequest('lata');
+        $this->form->oprocentowanie = getFromRequest('oprocentowanie');
 
     }
     
+    public function action_calcShow(){
+        
+        
+        getMessages()->addInfo('Wygenerowano widok');
+        $this->generateView();
+    }
     
-    public function process(){
+    
+    public function action_process(){
 
         $this->getParams();
         if($this->validate()){
@@ -41,7 +48,7 @@ class CalcCredit {
             $this->result->total_cost = $this->result->result*12*$this->form->lata;
         }
         
-        getMessages()->addInfo('Wygenerowano widok');
+
         $this->generateView();
         
     }
@@ -98,7 +105,9 @@ class CalcCredit {
         getSmarty()->assign('kwota',$this->form->kwota);
         getSmarty()->assign('lata',$this->form->lata);
         getSmarty()->assign('oprocentowanie',$this->form->oprocentowanie);
-
+        
+        
+        getSmarty()->assign('user',unserialize($_SESSION['user']));
         getSmarty()->display('calc_view_credit.tpl');
         
     }

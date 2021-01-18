@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-01-18 11:20:31
+/* Smarty version 3.1.36, created on 2021-01-18 18:35:47
   from 'C:\xampp\htdocs\php_calculators\app\views\calc_view_credit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_60056eff473ee8_67585707',
+  'unifunc' => 'content_6005d503a9f5b0_82836408',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c74e4c683cebbccb99a786143f6cc8de168449d7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\php_calculators\\app\\views\\calc_view_credit.tpl',
-      1 => 1610968595,
+      1 => 1610994945,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60056eff473ee8_67585707 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6005d503a9f5b0_82836408 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_43678518560056eff4564b3_78183704', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9134869686005d503a8c430_98551728', 'content');
 ?>
     
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_43678518560056eff4564b3_78183704 extends Smarty_Internal_Block
+class Block_9134869686005d503a8c430_98551728 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_43678518560056eff4564b3_78183704',
+    0 => 'Block_9134869686005d503a8c430_98551728',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -50,7 +50,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 <section>
     <h3>Kalkulator kredytowy</h3>
     <form action="<?php echo $_smarty_tpl->tpl_vars['action_url']->value;?>
-calcCredit" method="POST" >
+process" method="POST" >
             <div class="row gtr-uniform gtr-50">
                     <div class="col-6 col-12-xsmall">
 

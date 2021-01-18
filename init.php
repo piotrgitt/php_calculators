@@ -1,9 +1,9 @@
 <?php
 
 // USTAWIENIE KONFIGURACJI
-require_once dirname(__FILE__).'/Core/Config.class.php';
+require_once 'Core/Config.class.php';
 $config = new Core\Config();
-include dirname(__FILE__).'/config.php'; 
+require_once 'config.php';
 
 //ZWRACANIE GLOBALNEGO PLIKU KONFIGURACJI
 function &getConfig(){
@@ -18,7 +18,7 @@ function &getMessages(){
     global $messages;
     return $messages; 
 }
-
+require_once 'Core/functions.php';
 $smarty = null;
 function &getSmarty(){
     global $smarty;
@@ -31,17 +31,32 @@ function &getSmarty(){
         $smarty->assign('messages', getMessages());
         
         $smarty->setTemplateDir(array(
-			'one' => getConfig()->root_path.'/app/views',
-			'two' => getConfig()->root_path.'/app/views/templates'
-		));       
-              
-    }
-    
-        
-        
-        
+                'one' => getConfig()->root_path.'/app/views',
+                'two' => getConfig()->root_path.'/app/views/templates'
+        ));        
+    } 
     return $smarty;
-    
+}
+
+
+
+
+
+////CLASS LOADER
+require_once 'Core/ClassLoader.class.php';
+$cloader = new Core\classLoader();
+
+function &getLoader(){
+    global $cloader;
+    return $cloader;
+}
+
+
+
+require_once 'Core/Router.class.php'; //załaduj i stwórz router
+$router = new Core\Router();
+function &getRouter(): Core\Router {
+    global $router; return $router;
 }
 
 
@@ -50,13 +65,5 @@ function &getSmarty(){
 session_start(); //uruchom lub kontynuuj sesję
 $config->roles = isset($_SESSION['_roles']) ? unserialize($_SESSION['_roles']) : array(); //wczytaj role
 
-require_once 'Core/ClassLoader.class.php';
-$cloader = new Core\classLoader();
-function &getLoader(){
-    global $cloader;
-    return $cloader;
-    
-}
+$router->setAction( getFromRequest('action') );
 
-require_once 'Core/functions.php';
-$action = getFromRequest('action');
