@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-01-18 12:47:29
-  from 'C:\xampp\htdocs\php_calculators\app\views\templates\main.tpl' */
+/* Smarty version 3.1.36, created on 2021-01-18 12:45:19
+  from 'C:\xampp\htdocs\php_calculators\app\views\templates\login_template.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_60058361265bd2_52363964',
+  'unifunc' => 'content_600582dfd54008_62946908',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '3723ecbaee11184186058ae3db1fdb4a6928188d' => 
+    'a8158c1cd2147f78a602e77b58d32dd91752d304' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\php_calculators\\app\\views\\templates\\main.tpl',
-      1 => 1610974047,
+      0 => 'C:\\xampp\\htdocs\\php_calculators\\app\\views\\templates\\login_template.tpl',
+      1 => 1610973550,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60058361265bd2_52363964 (Smarty_Internal_Template $_smarty_tpl) {
+function content_600582dfd54008_62946908 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -45,10 +45,8 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 /index.php">Kalkulator kredytowy</a></h1>
                 <nav id="nav">
                         <ul>
-                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['action_url']->value;?>
-logout">Wyloguj</a></li>
                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
-/index.php">Strona główna</a></li>
+/index.php">Home</a></li>
                         </ul>
                 </nav>
         </header>
@@ -65,7 +63,7 @@ logout">Wyloguj</a></li>
                 <!-- content -->    
                 <div class="content">
                 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2122420630600583612650f2_24586492', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_107552661600582dfd53775_97302563', 'content');
 ?>
 
                 </div>
@@ -82,7 +80,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_212242063060058361
                 <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
             </ul>
             <ul class="copyright">
-                <li>&copy; Piotr Herdzina. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>
         </footer>
     </div>
@@ -116,12 +114,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_212242063060058361
 </body>
 </html><?php }
 /* {block 'content'} */
-class Block_2122420630600583612650f2_24586492 extends Smarty_Internal_Block
+class Block_107552661600582dfd53775_97302563 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_2122420630600583612650f2_24586492',
+    0 => 'Block_107552661600582dfd53775_97302563',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-01-18 11:20:31
-  from 'C:\xampp\htdocs\php_calculators\app\views\calc_view_credit.tpl' */
+/* Smarty version 3.1.36, created on 2021-01-18 12:45:19
+  from 'C:\xampp\htdocs\php_calculators\app\views\login_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_60056eff473ee8_67585707',
+  'unifunc' => 'content_600582dfd44341_21127686',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'c74e4c683cebbccb99a786143f6cc8de168449d7' => 
+    'cf4791ee4062b8fb5187c4f3b26bc5688220b07e' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\php_calculators\\app\\views\\calc_view_credit.tpl',
-      1 => 1610968595,
+      0 => 'C:\\xampp\\htdocs\\php_calculators\\app\\views\\login_view.tpl',
+      1 => 1610973584,
       2 => 'file',
     ),
   ),
@@ -20,76 +20,58 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60056eff473ee8_67585707 (Smarty_Internal_Template $_smarty_tpl) {
+function content_600582dfd44341_21127686 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
+
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_43678518560056eff4564b3_78183704', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_713863750600582dfd361a4_89437731', 'content');
 ?>
-    
-<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
+
+<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "login_template.tpl");
 }
 /* {block 'content'} */
-class Block_43678518560056eff4564b3_78183704 extends Smarty_Internal_Block
+class Block_713863750600582dfd361a4_89437731 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_43678518560056eff4564b3_78183704',
+    0 => 'Block_713863750600582dfd361a4_89437731',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-
-
 <!-- Form -->
 <section>
-    <h3>Kalkulator kredytowy</h3>
+    <h3>Zaloguj</h3>
     <form action="<?php echo $_smarty_tpl->tpl_vars['action_url']->value;?>
-calcCredit" method="POST" >
+login" method="POST" >
             <div class="row gtr-uniform gtr-50">
-                    <div class="col-6 col-12-xsmall">
-
-                    <input type="text" id="id_x" name="kwota" value="<?php echo $_smarty_tpl->tpl_vars['kwota']->value;?>
-" placeholder="Wpisz kwotę" />
+                
+                    <div class="col-12 col-12-xsmall">
+                        <input type="text" id="login" name="login" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->login;?>
+" placeholder="Login" />
                     </div>
-                    <div class="col-6 col-12-xsmall">
-                            <input type="text" id="id_y" name="lata" value="<?php echo $_smarty_tpl->tpl_vars['lata']->value;?>
-" placeholder="Wpisz lata" />
+                    
+                    <div class="col-12 col-12-xsmall">
+                        <input type="password" id="pass" name="pass" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->login;?>
+" placeholder="Hasło" />
                     </div>
-
-                    <div class="col-6 col-12-xsmall">
-                            <input type="text" id="id_z" name="oprocentowanie" value="<?php echo $_smarty_tpl->tpl_vars['oprocentowanie']->value;?>
-" placeholder="%" />
-                    </div>
-
+                    
                     <div class="col-12">
-                            <ul class="actions">
-                                    <li><input type="submit" value="Oblicz" class="primary" /></li>
-                            </ul>
+                        <ul class="actions">
+                            <li><input type="submit" value="Oblicz" class="primary" /></li>
+                        </ul>
                     </div>
+                    
             </div>
     </form>
 </section>
-                    
-
-
-
-
-<!-- Results -->    
-<?php if ((isset($_smarty_tpl->tpl_vars['result']->value))) {?>
-<div style="margin: 20px; padding: 10px; border-radius: 5px; background-color: #5199FF;">
-    Miesięczna rata kredytu: <?php echo sprintf("%.2f",$_smarty_tpl->tpl_vars['result']->value);?>
- PLN </br>
-    Całkowity koszt kredytu: <?php echo sprintf("%.2f",$_smarty_tpl->tpl_vars['total_cost']->value);?>
- PLN
-</div>
-<?php }?>   
-
+                   
 </br></br>
 
 

@@ -16,8 +16,7 @@
                 <h1 id="logo"><a href="{$app_url}/index.php">Kalkulator kredytowy</a></h1>
                 <nav id="nav">
                         <ul>
-                                <li><a href="{$action_url}logout">Wyloguj</a></li>
-                                <li><a href="{$app_url}/index.php">Strona główna</a></li>
+                                <li><a href="{$app_url}/index.php">Home</a></li>
                         </ul>
                 </nav>
         </header>
