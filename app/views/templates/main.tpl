@@ -17,6 +17,7 @@
                 <nav id="nav">
                         <ul>
                                 <li><a href="{$action_url}logout">Wyloguj</a></li>
+                                <li><a href="{$action_url}results">Wyniki</a></li>
                                 <li><a href="{$app_url}/index.php">Strona główna</a></li>
                         </ul>
                 </nav>
