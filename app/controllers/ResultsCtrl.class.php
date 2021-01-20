@@ -8,7 +8,7 @@ use app\Forms\LoginForm;
 
 
 class ResultsCtrl {
-    private $wyniki;
+    private $results;
     private $database;
     
     public function __construct() {
@@ -37,7 +37,7 @@ class ResultsCtrl {
             ],
         ]);
 
-        $this->wyniki=$database->select("wynik", "*");
+        $this->results=$database->select("results", "*");
         
         
             
@@ -67,15 +67,8 @@ class ResultsCtrl {
         getSmarty()->assign('root_path',getConfig()->root_path);
         getSmarty()->assign('approot',getConfig()->app_root);
         
-        foreach($this->wyniki as $data)
-        {
-            getSmarty()->assign('id_wyniku',$data["kwota"]);
-            getSmarty()->assign('kwota',$data["kwota"]);
-            getSmarty()->assign('lata',$data["lata"]);
-            getSmarty()->assign('oprocentowanie',$data["oprocentowanie"]);
-            getSmarty()->assign('rata',$data["rata"]);
-            getSmarty()->assign('data',$data["data"]);
-        }
+      
+        getSmarty()->assign("results", $this->results);
         
         getSmarty()->display('results_view.tpl');
     } 

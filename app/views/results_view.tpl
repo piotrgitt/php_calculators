@@ -16,13 +16,17 @@
                                 </tr>
                         </thead>
                         <tbody>
-                                <tr>
-                                        <td>{$id_wyniku}</td>
-                                        <td>{$kwota}</td>
-                                        <td>{$lata}</td>
-                                        <td>{$oprocentowanie}%</td>
-                                        <td>{$rata} PLN</td>
-                                </tr>
+                                
+                                {foreach $results as $data}
+                                   <tr>
+                                        <td>{$data["id_wyniku"]}</td>
+                                        <td>{$data["kwota"]|string_format:"%.2f"}</td>
+                                        <td>{$data["lata"]}</td>
+                                        <td>{$data["oprocentowanie"]|string_format:"%.2f"}%</td>
+                                        <td>{$data["rata"]|string_format:"%.2f"} PLN</td>
+                                    </tr> 
+                                {/foreach}    
+
                                
                         </tbody>
                         <tfoot>

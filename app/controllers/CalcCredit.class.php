@@ -73,7 +73,7 @@ class CalcCredit {
       
             
 
-        $database->insert("wynik", [
+        $database->insert("results", [
                 "kwota" => $this->form->kwota,
                 "lata"   => $this->form->lata,
                 "oprocentowanie" => $this->form->oprocentowanie,
