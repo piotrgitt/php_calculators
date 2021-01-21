@@ -36,6 +36,35 @@
                 </div>
             </div> 
         </div>
+                
+                
+        <!-- Messages -->            
+    {if $messages->isError()} 
+        <div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #f55; width:300px; color:black;font-weight: bold; ">
+        <h4 style="color:black; font-weight: bold;">Wystąpiły błędy: </h4>
+        <ol class="err">
+                {foreach  $messages->getErrors() as $msg }
+                {strip}
+                        <li>{$msg}</li>
+                {/strip}
+                {/foreach}
+                </ol>
+        </div> 
+    {/if}
+
+    {if $messages->isInfo()} 
+        <div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #7bf; width:300px; color:black;font-weight: bold; ">
+        <h4 style="color:black; font-weight: bold;">INFO: </h4>
+        <ol class="err">
+                {foreach  $messages->getInfos() as $msg }
+                {strip}
+                        <li>{$msg}</li>
+                {/strip}
+                {/foreach}
+                </ol>
+        </div> 
+    {/if}        
+                
         <!-- Footer-->
         <footer id="footer">
             <ul class="icons">
@@ -52,6 +81,9 @@
         </footer>
     </div>
 
+    
+                
+                
     
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>

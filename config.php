@@ -1,4 +1,6 @@
 <?php
+$config->debug = true;
+
 //konfiguracja
 $config->server_name = 'localhost';
 $config->server_url = 'http://'.$config->server_name;

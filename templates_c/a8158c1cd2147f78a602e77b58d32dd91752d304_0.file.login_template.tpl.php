@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-01-18 14:09:35
+/* Smarty version 3.1.36, created on 2021-01-21 13:59:41
   from 'C:\xampp\htdocs\php_calculators\app\views\templates\login_template.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_6005969fee51c4_94475869',
+  'unifunc' => 'content_60097abd7e4754_20907432',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a8158c1cd2147f78a602e77b58d32dd91752d304' => 
     array (
       0 => 'C:\\xampp\\htdocs\\php_calculators\\app\\views\\templates\\login_template.tpl',
-      1 => 1610977858,
+      1 => 1611230189,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6005969fee51c4_94475869 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60097abd7e4754_20907432 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -63,12 +63,53 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                 <!-- content -->    
                 <div class="content">
                 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6651442836005969fee46d2_01111912', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_96792408460097abd7d6489_70576482', 'content');
 ?>
 
                 </div>
             </div> 
         </div>
+                
+                
+        <!-- Messages -->            
+    <?php if ($_smarty_tpl->tpl_vars['messages']->value->isError()) {?> 
+        <div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #f55; width:300px; color:black;font-weight: bold; ">
+        <h4 style="color:black; font-weight: bold;">Wystąpiły błędy: </h4>
+        <ol class="err">
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['messages']->value->getErrors(), 'msg');
+$_smarty_tpl->tpl_vars['msg']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['msg']->value) {
+$_smarty_tpl->tpl_vars['msg']->do_else = false;
+?>
+                <li><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+</li>
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                </ol>
+        </div> 
+    <?php }?>
+
+    <?php if ($_smarty_tpl->tpl_vars['messages']->value->isInfo()) {?> 
+        <div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #7bf; width:300px; color:black;font-weight: bold; ">
+        <h4 style="color:black; font-weight: bold;">INFO: </h4>
+        <ol class="err">
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['messages']->value->getInfos(), 'msg');
+$_smarty_tpl->tpl_vars['msg']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['msg']->value) {
+$_smarty_tpl->tpl_vars['msg']->do_else = false;
+?>
+                <li><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+</li>
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                </ol>
+        </div> 
+    <?php }?>        
+                
         <!-- Footer-->
         <footer id="footer">
             <ul class="icons">
@@ -85,6 +126,9 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6651442836005969fe
         </footer>
     </div>
 
+    
+                
+                
     
     <!-- Scripts -->
     <?php echo '<script'; ?>
@@ -114,12 +158,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6651442836005969fe
 </body>
 </html><?php }
 /* {block 'content'} */
-class Block_6651442836005969fee46d2_01111912 extends Smarty_Internal_Block
+class Block_96792408460097abd7d6489_70576482 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_6651442836005969fee46d2_01111912',
+    0 => 'Block_96792408460097abd7d6489_70576482',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

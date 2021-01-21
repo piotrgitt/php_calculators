@@ -47,43 +47,24 @@ class CalcCredit {
             $this->result->result = floatval(($this->form->kwota / ( $this->form->lata*12))*($this->form->oprocentowanie/100+1));
             $this->result->total_cost = $this->result->result*12*$this->form->lata;
         }
-        
+       
+            
         try{
-            
-            $database = new \Medoo\Medoo([
-            // required
-            'database_type' => 'mysql',
-            'database_name' => 'calc_credit_db',
-            'server' => 'localhost',
-            'username' => 'root',
-            'password' => '',
-
-            // [optional]
-            'charset' => 'utf8',
-            'collation' => 'utf8_polish_ci',
-            'port' => 3306,
-
-            // [optional] driver_option for connection, read more from http://www.php.net/manual/en/pdo.setattribute.php
-            'option' => [
-                    \PDO::ATTR_CASE => \PDO::CASE_NATURAL,
-                    \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
-            ],
-        ]);
-            
-      
-            
-
-        $database->insert("results", [
-                "kwota" => $this->form->kwota,
-                "lata"   => $this->form->lata,
-                "oprocentowanie" => $this->form->oprocentowanie,
-                "rata"    => $this->result->result,
-                "data"    => date("Y-m-d H:i:s")
-        ]);
-            
-        }catch(\PDOException $ex){
-            getMessages()->addError($ex->getMessage());
+            $database = getDB();
+            $database->insert("results", [
+            "kwota" => $this->form->kwota,
+            "lata"   => $this->form->lata,
+            "oprocentowanie" => $this->form->oprocentowanie,
+            "rata"    => $this->result->result,
+            "data"    => date("Y-m-d H:i:s")
+            ]);  
+        } catch (\PDOException $ex){
+            getMessages()->addError("Dodanie rekordó do bazy nie powiodło się");
+            if(getConfig()->$debug==true) getMessages()->addError($ex->getMessage());
         }
+        
+            
+        
 
         $this->generateView();
         

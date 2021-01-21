@@ -3,6 +3,8 @@ namespace Core;
 
 class Config{
     
+    public $debug;
+    
     public $server_name;
     public $server_url;
     public $app_root;
